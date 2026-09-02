@@ -1,6 +1,5 @@
 /*
-Escribir un programa que pida cuantos hombres y mujeres hay en un aula (números enteros) y nos
-informa del porcentaje de hombres y de mujeres.
+Pedir por teclado 10 sueldos, mostrar su suma y cuales son mayores de 500.
  */
 package javaCiclos;
 
@@ -13,20 +12,26 @@ import java.util.Scanner;
 public class Ejecicio1 {
 
     public static void main(String[] args) {
-        int hombres, mujeres, total;
-        double porcentajeHombres, porcentajeMujeres;
-
+        int sueldo, i;
+        int sumaSueldos = 0;
+        int contadorMayor = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Cuantos hombres hay en el aula? ");
-        hombres = sc.nextInt();
-        System.out.println("Cuantas mujeres hay en el aula? ");
-        mujeres = sc.nextInt();
-        total = hombres + mujeres;
-        System.out.println("Este es el total de personas en el aula: " + total);
-        porcentajeHombres = ((double) hombres / total) * 100;
-        porcentajeMujeres = ((double) mujeres / total) * 100;
-        System.out.println("Este es el porcentaje de hombres: " + porcentajeHombres + "%");
-        System.out.println("Este es el porcentaje de mujeres: " + porcentajeMujeres + "%");
+
+        for (i = 1; i <= 10; i++) {
+            System.out.println("Introduce el sueldo " + i + ": ");
+            sueldo = sc.nextInt();
+
+            sumaSueldos += sueldo;
+            
+            if (sueldo>500) {
+                contadorMayor++;
+            }
+
+        }
+        System.out.println("RESULTADOS");
+        System.out.println("Suma total de sueldos: "+sumaSueldos);
+        System.out.println("Numero de personas con sueldo mayor a 500: "+contadorMayor);
+        
 
     }
 }
